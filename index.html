@@ -9,27 +9,57 @@
 <body>
     <div class="login-container">
         <div class="login-header">
-            <div class="icon-shield"></div>
-            <h2>Login</h2>
+            <div class="icon-shield-large"></div>
+            <h2 class="login-title">Login</h2>
+            <div class="icon-lock"></div>
         </div>
-        <form class="login-form">
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="usermane" name="username" required>
-                <div class="input-icon user-icon"></div>
+        <div class="login-content">
+            <!-- Contenedor de la izquierda -->
+            <div class="left-panel">
+                <div class="empty-space"></div>
+                <div class="empty-space"></div>
+                <div class="empty-space"></div>
+                
+                <h3 class="remember-title">Remember</h3>
+                <p class="lorem-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Debitis quod eveniet sequi natus dolore nemo facere a quas quos! 
+                    Officiis, maiores nesciunt sunt.
+                </p>
+                
+                <div class="icon-shield-small"></div>
             </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="password" name="password" required>
-                <div class="input-icon lock-icon"></div>
+            <!-- Contenedor de la derecha (formulario) -->
+            <div class="right-panel">
+                <form class="login-form">
+                    <div class="input-group">
+                        <label for="username1"></label>
+                        <input type="text" id="username1" placeholder="Username" name="username1" required>
+                        <div class="input-icon user-icon"></div>
+                    </div>
+                    <div class="input-group">
+                        <label for="username2"></label>
+                        <input type="text" id="username2" placeholder="Username" name="username2" required>
+                        <div class="input-icon user-icon"></div>
+                    </div>
+                    <div class="input-group">
+                        <label for="password1"></label>
+                        <input type="password" id="password1" placeholder="Password" name="password1" required>
+                        <div class="input-icon lock-icon"></div>
+                    </div>
+                    <div class="input-group">
+                        <label for="password2"></label>
+                        <input type="password" id="password2" placeholder="Password" name="password2" required>
+                        <div class="input-icon lock-icon"></div>
+                    </div>
+                    <div class="remember-group">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember</label>
+                    </div>
+                    <button type="submit" class="login-button">LOGIN</button>
+                </form>
             </div>
-            <div class="remember-group">
-                <input type="checkbox" id="remember" name="remember">
-                <label for="remember">Remember</label>
-            </div>
-            <button type="submit" class="login-button">LOGIN</button>
-        </form>
+        </div>
     </div>
 </body>
 </html>
-
