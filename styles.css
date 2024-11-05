@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: gray;
+    background-color: #b2adad;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,82 +14,120 @@ body {
 }
 
 .login-container {
-    background-color: rgb(97, 93, 93);
-    color: #fff;
-    width: 400px;
+    background-color: #3c3c3c;
+    color: #fefefe;
+    width: 700px;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     position: relative;
     text-align: center;
-    border:#3c3c3c;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Cabecera con icono de escudo */
+/* cabecera con icono de escudo y candado */
 .login-header {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
     margin-bottom: 25px;
-}
-
-.icon-shield {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #ff5722, #ff8a50);
-    border-radius: 50%;
     position: relative;
-    border: 3px solid #ffffff;
 }
 
-.icon-shield::before {
-    content: '';
-    width: 25px;
-    height: 35px;
-    background-color: #fff;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 4px;
-}
-
-.icon-shield::after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background-color: #ff5722;
-    position: absolute;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-}
-
-/* Título */
-.login-header h2 {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 2.3rem;
+.login-title {
+    font-size: 4.3rem; 
+    font-weight: bold;
     color: white;
 }
 
-/* Estilos del formulario */
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* icono de escudo grande a la izquierda */
+.icon-shield-large {
+    width: 170px;
+    height: 170px;
+    background-image: url('imagen/shield1.png'); 
+    background-size: cover;
+    border-radius: 90px;
+    position: absolute;
+    left: 0;
+    top: 5px;
 }
 
-/* Grupo de entradas de texto */
+/* Icono de candado a la derecha del título */
+.icon-lock {
+    width: 70px;
+    height: 70px;
+    background-image: url('imagen/candado3.png');
+    background-size: cover;
+    position: absolute;
+    border-radius: 40px;
+    right: 0.2rem;
+}
+
+.login-content {
+    display: flex;
+    gap: 20px;
+    align-items: stretch; 
+}
+
+/* Panel de la izquierda */
+.left-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.empty-space {
+    height: 15px; 
+}
+
+.remember-title {
+    font-size: 1.2rem;
+    color: #5a5a5a;
+    margin: 130px 0 5px;
+    text-align: center;
+}
+
+.lorem-text {
+    font-size: 0.9rem;
+    color: gray;
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+/* Imagen del escudo pequeño en la parte inferior */
+.icon-shield-small {
+    width: 100px;
+    height: 100px;
+    background-image: url('imagen/candado2.png'); 
+    background-size: cover;
+    margin-top: auto;
+}
+
+/* Panel de la derecha (Formulario) */
+.right-panel {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .input-group {
     position: relative;
 }
 
 .input-group label {
     font-size: 1rem;
-    margin-bottom: 5px;
-    display: block;
     color: #ff8a50;
     text-align: left;
 }
@@ -101,18 +139,15 @@ body {
     border-radius: 8px;
     border: 2px solid #4a4a4a;
     background-color: rgb(228, 219, 219);
-    /*
-    background-color: #3c3c3c;
-    */
-    color: #ffffff;
+    color: black;
     font-size: 1rem;
 }
 
 .input-group input::placeholder {
-    color: #cccccc;
+    color: #000;
+    opacity: 1;
 }
 
-/* Iconos en las entradas de texto */
 .input-icon {
     position: absolute;
     top: 50%;
@@ -120,32 +155,17 @@ body {
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    background-color: #ff8a50;
-    border-radius: 50%;
+    background-size: cover;
 }
 
-.user-icon::before,
-.lock-icon::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
-}
-
-.user-icon::before {
+.user-icon {
     background-image: url('imagen/usuario1.jpg'); 
-    background-size: cover;
 }
 
-.lock-icon::before {
+.lock-icon {
     background-image: url('imagen/candado.svg'); 
-    background-size: cover;
 }
 
-/* Grupo de recordar */
 .remember-group {
     display: flex;
     align-items: center;
@@ -173,9 +193,4 @@ body {
 
 .login-button:hover {
     background: linear-gradient(135deg, #ff8a50, #ff5722);
-}
-
-.login-form input::placeholder {
-    color: black;
-    opacity: 1;
 }
