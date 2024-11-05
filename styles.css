@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: rgb(97, 93, 93);
+    color: #fff;
+    width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+    border:#3c3c3c;
+}
+
+/* Cabecera con icono de escudo */
+.login-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.icon-shield {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff5722, #ff8a50);
+    border-radius: 50%;
+    position: relative;
+    border: 3px solid #ffffff;
+}
+
+.icon-shield::before {
+    content: '';
+    width: 25px;
+    height: 35px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+}
+
+.icon-shield::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #ff5722;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+/* Título */
+.login-header h2 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.3rem;
+    color: white;
+}
+
+/* Estilos del formulario */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Grupo de entradas de texto */
+.input-group {
+    position: relative;
+}
+
+.input-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+    color: #ff8a50;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    padding-left: 40px;
+    border-radius: 8px;
+    border: 2px solid #4a4a4a;
+    background-color: rgb(228, 219, 219);
+    /*
+    background-color: #3c3c3c;
+    */
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.input-group input::placeholder {
+    color: #cccccc;
+}
+
+/* Iconos en las entradas de texto */
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #ff8a50;
+    border-radius: 50%;
+}
+
+.user-icon::before,
+.lock-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+}
+
+.user-icon::before {
+    background-image: url('imagen/usuario1.jpg'); 
+    background-size: cover;
+}
+
+.lock-icon::before {
+    background-image: url('imagen/candado.svg'); 
+    background-size: cover;
+}
+
+/* Grupo de recordar */
+.remember-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: #ff8a50;
+}
+
+.remember-group input[type="checkbox"] {
+    accent-color: #ff8a50;
+}
+
+/* Botón de inicio de sesión */
+.login-button {
+    background: linear-gradient(135deg, #ff5722, #ff8a50);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.1rem;
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #ff8a50, #ff5722);
+}
+
+.login-form input::placeholder {
+    color: black;
+    opacity: 1;
+}
