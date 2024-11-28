@@ -31,7 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (PDOException $e) {
         $mensaje = "Error al registrar el usuario ...<br>" . $e->getMessage();
     }
-    exit(); // cortar la ejecucion
+    
+    //echo $mensaje;
+    //exit(); // cortar la ejecucion
 }
 
 mostrarFormularioIngreso($mensaje);

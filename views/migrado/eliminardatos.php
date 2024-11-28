@@ -1,6 +1,4 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']. '/etc/config.php';
-// require_once $_SERVER['DOCUMENT_ROOT']. '/models/conexion.php';
 
     session_start();
 
