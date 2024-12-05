@@ -1,6 +1,9 @@
 <?php
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 
 
 
@@ -26,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
 
-        $modeloUsuario->insertarUsuario($tmpdatusuario, $tmpdatpassword, $tmpdatperfil);
+        $modeloUsuario->insertarUsuarios($tmpdatusuario, $tmpdatpassword, $tmpdatperfil);
         $mensaje = "USUARIO RESGISTRADO CON EXITO <br>";
     } catch (PDOException $e) {
         $mensaje = "Error al registrar el usuario ...<br>" . $e->getMessage();

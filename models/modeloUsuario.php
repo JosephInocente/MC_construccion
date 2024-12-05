@@ -60,10 +60,22 @@ class modeloUsuario{
     //obtiene un solo usuario por su nombre
     public function obtenerUsuarioPorNombre($username)
     {
-        $query = 'select id, username, password, perfil from usuarios where username = :username';
+        $query = "select id, username, password, perfil from usuarios where username = :username";
         
         $stmt = $this->conexion->prepare($query);
         $stmt->bindParam(':username', $username);
+
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function ValidarUsuario($username,$password)
+    {
+        $query = "select id, perfil from usuarios where username = :username and password = :password";
+        
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);  //mejora pendiente utilizar algun algoritmo de encriptacion
 
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
